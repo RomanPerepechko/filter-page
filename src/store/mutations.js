@@ -11,3 +11,7 @@ export const REMOVE_FROM_CART = (state, payload) => {
 export const INITIALISE_STORE = (state, payload) => {
     state.cart = payload;
 };
+
+export const SET_SEARCH_QUERY = (state, payload) => {
+    state.searchQuery = payload;
+};

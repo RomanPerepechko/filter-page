@@ -1,10 +1,11 @@
 <template>
     <div class="filter-list">
-        <FilterCard class="filter-list__item" v-for="item in items" :key="`picture_${item.id}`" :item="item"/>
+        <FilterCard class="filter-list__item" v-for="item in filteredItems" :key="`picture_${item.id}`" :item="item"/>
     </div>
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
     import FilterCard from './FilterCard.vue';
 
     export default {
@@ -24,7 +25,17 @@
                 ],
             };
         },
-    }
+
+        computed: {
+            ...mapGetters({
+                searchQuery: 'searchQuery',
+            }),
+
+            filteredItems() {
+                return this.items.filter(item => item.title.toLocaleLowerCase().includes(this.searchQuery));
+            },
+        },
+    };
 </script>
 
 <style lang="scss" scoped>

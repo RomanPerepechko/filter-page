@@ -11,3 +11,7 @@ export const initialiseStore = ({ commit }) => {
 		commit('INITIALISE_STORE', JSON.parse(localStorage.getItem('cart')));
 	}
 }
+
+export const setSearchQuery = ({ commit }, payload) => {
+	commit('SET_SEARCH_QUERY', payload);
+}
