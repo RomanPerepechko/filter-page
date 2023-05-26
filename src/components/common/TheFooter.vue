@@ -41,6 +41,7 @@
 <style lang="scss" scoped>
     .footer {
         width: 100%;
+        min-width: 1280px;
         background: #eceaea;
 
         &__wrapper {
@@ -48,6 +49,7 @@
             align-items: center;
             width: 100%;
             max-width: 1280px;
+            min-width: 1280px;
             margin: 0 auto;
             padding: 24px 0;
         }

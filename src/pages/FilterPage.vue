@@ -24,11 +24,14 @@
 
 <style lang="scss" scoped>
     .filter-page {
+        width: 100%;
+        min-width: 1280px;
         
         &__wrapper {
             width: 100%;
             height: 500px;
             max-width: 1280px;
+            min-width: 1280px;
             margin: 0 auto;
             padding: 45px 0;
         }

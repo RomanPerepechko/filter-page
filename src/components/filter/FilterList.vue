@@ -46,6 +46,10 @@
 
         &__item {
             margin-right: 32px;
+
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
 </style>

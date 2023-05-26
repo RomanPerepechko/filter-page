@@ -52,6 +52,7 @@
 <style lang="scss" scoped>
     .header {
         width: 100%;
+        min-width: 1280px;
         border-bottom: 1px solid #E1E1E1;
 
         &__wrapper {
@@ -59,6 +60,7 @@
             align-items: center;
             width: 100%;
             max-width: 1280px;
+            min-width: 1280px;
             margin: 0 auto;
             padding: 24px 0;
         }
