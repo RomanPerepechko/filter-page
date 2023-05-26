@@ -3,13 +3,15 @@
         <div class="footer-contacts__phone" v-if="phone">
             <PhoneIcon class="footer-contacts__icon"/>
 
-            <a :href="`tel:+${phone}`">+{{ formattedPhone }}</a>
+            <a :href="`tel:+${phone}`">
+                <h5>+{{ phone }}</h5>
+            </a>
         </div>
 
         <div class="footer-contacts__address" v-if="address">
             <LocationIcon class="footer-contacts__icon"/>
 
-            <span>{{ address }}</span>
+            <h5>{{ address }}</h5>
         </div>
     </div>
 </template>
@@ -37,12 +39,6 @@
             PhoneIcon,
             LocationIcon,
         },
-
-        computed: {
-            formattedPhone() {
-                return this.phone.replace(/[^0-9]/gim, '')
-            },
-        },
     };
 </script>
 
@@ -57,10 +53,7 @@
         &__address, &__phone {
             display: flex;
             align-items: center;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 150%;
-            color: #555555;
+            color: $gray;
         }
 
         &__address {

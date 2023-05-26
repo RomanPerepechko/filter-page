@@ -7,8 +7,8 @@
 </template>
 
 <script>
-    import VInput from '../common/VInput.vue';
-    import VButton from '../common/VButton.vue';
+    import VInput from '../UI/VInput.vue';
+    import VButton from '../UI/VButton.vue';
     import { mapActions } from 'vuex';
 
     export default {
@@ -40,7 +40,7 @@
 
             searchItems() {
                 this.setSearchQuery(this.searchQuery.toLowerCase());
-            }
+            },
         },
     };
 </script>

@@ -25,6 +25,7 @@
 </script>
 
 <style lang="scss" module>
-#app {
-}
+    #app {
+        //
+    }
 </style>

@@ -1,9 +1,7 @@
 <template>
     <div class="filter-page">
         <div class="filter-page__wrapper">
-            <div class="filter-page__title">
-                Картины эпохи Возрождения
-            </div>
+            <h1>Картины эпохи Возрождения</h1>
 
             <FilterList />
         </div>
@@ -36,12 +34,8 @@
             padding: 45px 0;
         }
 
-        &__title {
+        h1 {
             margin-bottom: 40px;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 150%;
-            color: #343030;
         }
     }
 </style>

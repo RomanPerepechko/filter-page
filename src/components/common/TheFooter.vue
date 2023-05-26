@@ -42,7 +42,7 @@
     .footer {
         width: 100%;
         min-width: 1280px;
-        background: #eceaea;
+        background: $footer-background;
 
         &__wrapper {
             display: flex;

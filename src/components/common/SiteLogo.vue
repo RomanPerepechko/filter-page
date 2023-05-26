@@ -15,5 +15,6 @@
         height: 48px;
         background-position: center;
         background-size: contain;
+        background-repeat: no-repeat;
     }
 </style>

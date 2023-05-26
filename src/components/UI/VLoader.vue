@@ -25,16 +25,16 @@
             left: 2px;
             width: 4px;
             background: rgb(178, 173, 173);
-            animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+            animation: loader 1.2s cubic-bezier(0, .5, .5, 1) infinite;
 
             &:nth-child(1) {
                 left: 2px;
-                animation-delay: -0.24s;
+                animation-delay: -.24s;
             }
 
             &:nth-child(2) {
                 left: 8px;
-                animation-delay: -0.12s;
+                animation-delay: -.12s;
             }
 
             &:nth-child(3) {

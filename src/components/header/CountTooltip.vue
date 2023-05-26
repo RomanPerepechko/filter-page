@@ -25,7 +25,7 @@
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background: #403432;
+        background: $tooltip;
         font-weight: 500;
         font-size: 12px;
         line-height: 15px;

@@ -3,26 +3,27 @@
         <div class="filter-card__img" :style="{ backgroundImage:`url(${item.img})` }"></div>
 
         <div class="filter-card__body">
-            <div class="filter-card__title" v-html="item.title"></div>
+            <h2 class="filter-card__title" v-html="item.title"></h2>
 
             <div class="filter-card__bottom" v-if="!item.is_sold">
                 <div class="filter-card__price">
-                    <div class="filter-card__old-price" v-if="item.oldprice">{{ splitPrice(item.oldprice) }} $</div>
-                    <div class="filter-card__new-price" v-if="item.price">{{ splitPrice(item.price) }} $</div>
+                    <h6 class="filter-card__old-price" v-if="item.oldprice">{{ splitPrice(item.oldprice) }} $</h6>
+
+                    <h3 class="filter-card__new-price" v-if="item.price">{{ splitPrice(item.price) }} $</h3>
                 </div>
 
                 <VButton @click.native="addItem" :is-loading="isLoading" :is-in-cart="itemStatus" :title="buttonTitle"></VButton>
             </div>
 
-            <div class="filter-card__status" v-else>
+            <h3 class="filter-card__status" v-else>
                 Продана на аукционе
-            </div>
+            </h3>
         </div>
     </div>
 </template>
 
 <script>
-    import VButton from '../common/VButton.vue';
+    import VButton from '../UI/VButton.vue';
     import axios from 'axios';
     import { mapActions, mapGetters } from 'vuex';
     import { splitThousands } from '@/assets/js/utils';
@@ -120,16 +121,12 @@
 
         &__body {
             padding: 20px 24px;
-            border: 1px solid #e1e1e1;
+            border: 1px solid $border-color;
             border-top: none;
         }
 
         &__title {
             margin-bottom: 22px;
-            font-weight: 400;
-            font-size: 18px;
-            line-height: 150%;
-            color: #343030;
         }
 
         &__bottom {
@@ -139,25 +136,12 @@
         }
 
         &__old-price {
-            font-weight: 300;
-            font-size: 14px;
-            line-height: 150%;
             text-decoration-line: line-through;
-            color: #a0a0a0;
-        }
-
-        &__new-price {
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 150%;
+            color: $hint;
         }
 
         &__status {
             height: 48px;
-            font-weight: 700;
-            font-size: 16px;
-            line-height: 150%;
-            color: #343030;
         }
     }
 </style>

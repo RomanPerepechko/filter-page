@@ -53,7 +53,7 @@
     .header {
         width: 100%;
         min-width: 1280px;
-        border-bottom: 1px solid #E1E1E1;
+        border-bottom: 1px solid $border-color;
 
         &__wrapper {
             display: flex;

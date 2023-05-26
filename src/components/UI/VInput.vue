@@ -24,17 +24,16 @@
     .input {
         height: 48px;
         padding: 14px 16px;
-        border: 1px solid #e1e1e1;
+        border: 1px solid $border-color;
         outline: none;
         background: transparent;
         font-weight: 400;
         font-size: 14px;
         line-height: 150%;
-        color: #343030;
         transition: $default-transition;
 
         &:focus {
-            border: 1px solid #B5B5B5;
+            border: 1px solid $focus;
         }
     }
 </style>
