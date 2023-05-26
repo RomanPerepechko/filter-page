@@ -30,5 +30,6 @@
         font-size: 12px;
         line-height: 15px;
         color: #fff;
+        user-select: none;
     }
 </style>
