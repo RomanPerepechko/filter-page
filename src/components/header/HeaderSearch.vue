@@ -1,6 +1,6 @@
 <template>
     <div class="header-search">
-        <VInput class="header-search__input" v-model="searchQuery" :value="searchQuery" placeholder="Поиск по названию картины"/>
+        <VInput class="header-search__input" v-model="searchQuery" :value="searchQuery" @keyup.enter.native="searchItems" placeholder="Поиск по названию картины"/>
 
         <VButton title="Найти" @click.native="searchItems"/>
     </div>
