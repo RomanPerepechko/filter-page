@@ -1,17 +1,17 @@
 <template>
     <div class="filter-card" :class="{ '_sold': item.is_sold }">
-        <div class="filter-card__img" :style="{backgroundImage:`url(${item.img})`}"></div>
+        <div class="filter-card__img" :style="{ backgroundImage:`url(${item.img})` }"></div>
 
         <div class="filter-card__body">
             <div class="filter-card__title" v-html="item.title"></div>
 
             <div class="filter-card__bottom" v-if="!item.is_sold">
                 <div class="filter-card__price">
-                    <div class="filter-card__old-price" v-if="item.oldprice">{{item.oldprice}} $</div>
-                    <div class="filter-card__new-price" v-if="item.price">{{item.price}} $</div>
+                    <div class="filter-card__old-price" v-if="item.oldprice">{{ splitPrice(item.oldprice) }} $</div>
+                    <div class="filter-card__new-price" v-if="item.price">{{ splitPrice(item.price) }} $</div>
                 </div>
 
-                <VButton @click.native="addItem" :is-loading="isLoading" :title="buttonTitle"></VButton>
+                <VButton @click.native="addItem" :is-loading="isLoading" :is-in-cart="itemStatus" :title="buttonTitle"></VButton>
             </div>
 
             <div class="filter-card__status" v-else>
@@ -25,6 +25,7 @@
     import VButton from '../common/VButton.vue';
     import axios from 'axios';
     import { mapActions, mapGetters } from 'vuex';
+    import { splitThousands } from '@/assets/js/utils';
 
     export default {
         name: "FIlterCard",
@@ -52,6 +53,10 @@
                 addToCart: 'addToCart',
                 removeFromCart: 'removeFromCart',
             }),
+
+            splitPrice(price) {
+                return splitThousands(price);
+            },
 
             addItem() {
                 this.isLoading = true;

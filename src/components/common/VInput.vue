@@ -31,6 +31,10 @@
         font-size: 14px;
         line-height: 150%;
         color: #343030;
-        box-sizing: border-box;
+        transition: $default-transition;
+
+        &:focus {
+            border: 1px solid #B5B5B5;
+        }
     }
 </style>

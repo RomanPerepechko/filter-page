@@ -1,6 +1,6 @@
 <template>
-    <div class="header-links">
-        <a class="header-links__link" v-for="link in links" :href="link.url" :key="`link_${link.url}`" target="_blank">
+    <div class="site-links">
+        <a class="site-links__link" v-for="link in links" :href="link.url" :key="`link_${link.url}`" target="_blank">
             {{ link.title }}
         </a>
     </div>
@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: 'HeaderLinks',
+        name: 'SiteLinks',
 
         props: {
             links: {
@@ -20,7 +20,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .header-links {
+    .site-links {
         display: flex;
         align-items: center;
 

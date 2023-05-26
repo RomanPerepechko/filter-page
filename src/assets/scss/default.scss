@@ -5,7 +5,17 @@ body {
     font-family: $base-font;
     font-size: $base-font-size;
     color: $base-color;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    min-height: calc(100vh - 193px);
+}
+
+footer {
+    flex-shrink: 0;
 }
 
 html,
@@ -17,4 +27,9 @@ body {
 
 a {
     text-decoration: none;
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
 }

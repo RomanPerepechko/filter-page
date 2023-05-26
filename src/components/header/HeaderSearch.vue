@@ -2,7 +2,7 @@
     <div class="header-search">
         <VInput class="header-search__input" v-model="searchQuery" :value="searchQuery" placeholder="Поиск по названию картины"/>
 
-        <VButton title="Найти"/>
+        <VButton title="Найти" @click.native="searchItems"/>
     </div>
 </template>
 
@@ -27,7 +27,9 @@
 
         watch: {
             searchQuery(newVal) {
-                this.setSearchQuery(newVal.toLowerCase());
+                if (newVal === '') {
+                    this.setSearchQuery('');
+                }
             },
         },
 
@@ -35,6 +37,10 @@
             ...mapActions({
                 setSearchQuery: 'setSearchQuery',
             }),
+
+            searchItems() {
+                this.setSearchQuery(this.searchQuery.toLowerCase());
+            }
         },
     };
 </script>

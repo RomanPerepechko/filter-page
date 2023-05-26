@@ -1,26 +1,28 @@
 <template>
-    <header class="header">
-        <div class="header__wrapper">
+    <footer class="footer">
+        <div class="footer__wrapper">
             <SiteLogo />
+
+            <SiteLinks class="footer__links" :links="links"/>
             
-            <SiteLinks :links="links" class="header__links"/>
-
-            <HeaderSearch class="header__search"/>
-
-            <CartStatus class="header__status" :count="cart.length"/>
+            <FooterContacts class="footer__contacts" phone="74959999999" address="г. Воронеж, ул. Никитина, 119А"/>
         </div>
-    </header>
+    </footer>
 </template>
 
 <script>
-    import CartStatus from '../header/CartStatus.vue';
-    import SiteLinks from './SiteLinks.vue';
-    import HeaderSearch from '../header/HeaderSearch.vue';
     import SiteLogo from './SiteLogo.vue';
-    import { mapGetters } from 'vuex';
+    import SiteLinks from './SiteLinks.vue';
+    import FooterContacts from '../footer/FooterContacts.vue';
 
     export default {
-        name: "TheHeader",
+        name: "TheFooter",
+
+        components: {
+            SiteLogo,
+            SiteLinks,
+            FooterContacts,
+        },
 
         data() {
             return {
@@ -33,26 +35,13 @@
                 ]
             }
         },
-
-        components: {
-            SiteLogo,
-            SiteLinks,
-            HeaderSearch,
-            CartStatus
-        },
-
-        computed: {
-            ...mapGetters({
-                cart: 'cart',
-            }),
-        },
     };
 </script>
 
 <style lang="scss" scoped>
-    .header {
+    .footer {
         width: 100%;
-        border-bottom: 1px solid #E1E1E1;
+        background: #eceaea;
 
         &__wrapper {
             display: flex;
@@ -67,12 +56,8 @@
             margin-left: 48px;
         }
 
-        &__search {
+        &__contacts {
             margin-left: auto;
-        }
-
-        &__status {
-            margin-left: 32px;
         }
     }
 </style>
